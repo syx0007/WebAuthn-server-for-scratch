@@ -1,0 +1,14 @@
+name = "webauthn-auth-worker"
+main = "src/index.js"
+compatibility_date = "2025-04-05"
+
+# 替换为你的实际数据库 ID
+[[d1_databases]]
+binding = "DB"
+database_name = "WEBAUTHN_DB"
+database_id = "415909a3-fac9-4e07-a76d-895271cc8620"  # 从 wrangler d1 list 输出中获取
+
+# 可选：绑定自定义域名
+[[routes]]
+pattern = "auth.yourapp.com/*"
+script = "webauthn-auth-worker"
